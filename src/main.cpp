@@ -49,9 +49,12 @@ int main(int argc, char * argv[]) {
         strcat(openVim, argv[1]);
 
         if (checkFile("tmp", argv[1])) {
+            system("rm tmp");
             system(openVim);
         }
         else{
+            system("rm tmp");
+            
             enum Language { c, cpp, rs };
 
             std::string precode[] = {
@@ -76,7 +79,6 @@ int main(int argc, char * argv[]) {
                 system(openVim);
             }
         }
-        system("rm tmp");
         return 0;
     }
 }
